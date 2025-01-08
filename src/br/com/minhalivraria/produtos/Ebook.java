@@ -12,14 +12,6 @@ public class Ebook extends Livro implements Promocional{
 		super(autor);
 	}
 
-	public double getValor() {
-		return valor;
-	}
-
-	public void setValor(double valor) {
-		this.valor = valor;
-	}
-
 	public String getWatermark() {
 		return watermark;
 	}

@@ -1,5 +1,6 @@
 package br.com.minhalivraria.produtos;
 
+import java.math.BigDecimal;
 import java.util.Objects;
 
 import br.com.minhalivraria.Autor;

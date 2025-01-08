@@ -15,7 +15,7 @@ public class LivroFisico extends Livro implements Promocional{
 	
 
 	public boolean aplicarDescontoDe(double porcentagem) {
-		if(getValor() > 0.3) {
+		if(porcentagem > 0.3) {
 			return false;
 		} else {
 			double desconto = getValor() * porcentagem;

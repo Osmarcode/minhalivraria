@@ -17,12 +17,6 @@ public class Autor {
 		System.out.println("----------------------");
 	}
 
-	public Autor(String nomeAutor, String cpfAutor, String emailAutor) {
-		super();
-		this.nomeAutor = nomeAutor;
-		this.cpfAutor = cpfAutor;
-		this.emailAutor = emailAutor;
-	}
 
 	public String getNomeAutor() {
 		return nomeAutor;
