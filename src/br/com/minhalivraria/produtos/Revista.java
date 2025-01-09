@@ -2,15 +2,15 @@ package br.com.minhalivraria.produtos;
 
 import br.com.minhalivraria.Editora;
 
-public class Revista {
+public class Revista implements Produto, Promocional{
 	
 	private String nome;
-	private String descricoa;
+	private String descricao;
 	private double valor;
-	private Editora editora;
+	private String editora;
 	
 	public Revista(Editora editora) {
-		
+		this.editora = editora.getNomeFantasia();
 	}
 
 	public String getNome() {
@@ -21,12 +21,12 @@ public class Revista {
 		this.nome = nome;
 	}
 
-	public String getDescricoa() {
-		return descricoa;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setDescricoa(String descricoa) {
-		this.descricoa = descricoa;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 	public double getValor() {
@@ -37,14 +37,6 @@ public class Revista {
 		this.valor = valor;
 	}
 
-	public Editora getEditora() {
-		return editora;
-	}
-
-	public void setEditora(Editora editora) {
-		this.editora = editora;
-	}
-	
 	public boolean aplicarDescontoDe(double porcentagem) {
 		if(porcentagem > 0.10) {
 			return false;
@@ -57,6 +49,22 @@ public class Revista {
 	public int compare(Produto outro) {
 		return Double.compare(this.getValor(), outro.getValor());
 	}
-	
 
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Nome: ").append(nome).append("\n");
+		sb.append("Descrição: ").append(descricao).append("\n");
+		sb.append("Valor: ").append(valor).append("\n");
+		sb.append("Editora: ").append(editora).append("\n");
+		return sb.toString();
+	}
+
+	@Override
+	public int compareTo(Produto outro) {
+
+		return Double.compare(getValor(), outro.getValor());
+	}
+	
+	
 }

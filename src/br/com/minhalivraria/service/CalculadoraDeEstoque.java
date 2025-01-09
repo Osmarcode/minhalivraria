@@ -11,7 +11,7 @@ public class CalculadoraDeEstoque {
 		BigDecimal soma = BigDecimal.ZERO; //seria o mesmo que inicializar um acumulador com 0.0
 		BigDecimal valorUnitario = new BigDecimal("59.90");
 		
-		for(int i = 0; i < 35; i++) {
+		for(int i = 0; i < 30; i++) {
 			soma = soma.add(valorUnitario);
 		}
 		
