@@ -6,19 +6,19 @@ import java.util.Objects;
 import br.com.minhalivraria.Autor;
 import br.com.minhalivraria.exception.AutorNuloException;
 
-public abstract class Livro  implements Produto{
-	
+public abstract class Livro implements Produto {
+
 	private String nome;
 	private String descricao;
 	private double valor;
 	private String isbn;
 	private Autor autor;
-	
+
 	public Livro(Autor autor) {
 
-		if(autor == null) {
+		if (autor == null) {
 			throw new AutorNuloException("O Autor não pode ser nulo.");
-		} 
+		}
 		this.autor = autor;
 		this.isbn = "000-00-00000-00-0";
 	}
@@ -30,9 +30,6 @@ public abstract class Livro  implements Produto{
 		this.valor = valor;
 		this.isbn = "000-00-00000-00-0";
 	}
-
-
-
 
 	public String getNome() {
 		return nome;
@@ -95,15 +92,15 @@ public abstract class Livro  implements Produto{
 
 	@Override
 	public String toString() {
-		 StringBuilder sb = new StringBuilder();
-		    sb.append("Autor: ").append(autor != null ? autor.getNomeAutor() : "Não possui autor.").append("\n");
-		    sb.append("Nome: ").append(nome).append("\n");
-		    sb.append("Descrição: ").append(descricao).append("\n");
-		    sb.append("Valor R$: ").append(valor).append("\n");
-		    sb.append("ISBN: ").append(isbn).append("\n");
-		    return sb.toString();
+		StringBuilder sb = new StringBuilder();
+		sb.append("Autor: ").append(autor != null ? autor.getNomeAutor() : "Não possui autor.").append("\n");
+		sb.append("Nome: ").append(nome).append("\n");
+		sb.append("Descrição: ").append(descricao).append("\n");
+		sb.append("Valor R$: ").append(valor).append("\n");
+		sb.append("ISBN: ").append(isbn).append("\n");
+		return sb.toString();
 	}
-	
+
 	public double compare(Livro outro) {
 		return Double.compare(this.getValor(), outro.getValor());
 	}

@@ -17,7 +17,6 @@ public class Autor {
 		System.out.println("----------------------");
 	}
 
-
 	public String getNomeAutor() {
 		return nomeAutor;
 	}

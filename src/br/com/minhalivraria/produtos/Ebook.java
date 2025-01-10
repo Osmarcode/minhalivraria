@@ -2,12 +2,11 @@ package br.com.minhalivraria.produtos;
 
 import br.com.minhalivraria.Autor;
 
-public class Ebook extends Livro implements Promocional{
-	
+public class Ebook extends Livro implements Promocional {
+
 	private double valor;
 	private String watermark;
-	
-	
+
 	public Ebook(Autor autor) {
 		super(autor);
 	}
@@ -22,10 +21,10 @@ public class Ebook extends Livro implements Promocional{
 
 	@Override
 	public int compareTo(Produto outro) {
-		if(this.getValor() > outro.getValor()) {
+		if (this.getValor() > outro.getValor()) {
 			return -1;
-		} 
-		if(this.getValor() < outro.getValor()) {
+		}
+		if (this.getValor() < outro.getValor()) {
 			return 1;
 		}
 		return 0;
@@ -33,12 +32,12 @@ public class Ebook extends Livro implements Promocional{
 
 	@Override
 	public boolean aplicarDescontoDe(double porcentagem) {
-		if(porcentagem > 0.15) {
+		if (porcentagem > 0.15) {
 			return false;
 		}
 		double desconto = (this.getValor() * porcentagem);
 		setValor(this.getValor() - desconto);
 		return true;
 	}
-	
+
 }

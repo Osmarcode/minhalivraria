@@ -2,13 +2,13 @@ package br.com.minhalivraria.produtos;
 
 import br.com.minhalivraria.Editora;
 
-public class Revista implements Produto, Promocional{
-	
+public class Revista implements Produto, Promocional {
+
 	private String nome;
 	private String descricao;
 	private double valor;
 	private String editora;
-	
+
 	public Revista(Editora editora) {
 		this.editora = editora.getNomeFantasia();
 	}
@@ -38,14 +38,14 @@ public class Revista implements Produto, Promocional{
 	}
 
 	public boolean aplicarDescontoDe(double porcentagem) {
-		if(porcentagem > 0.10) {
+		if (porcentagem > 0.10) {
 			return false;
 		}
 		double desconto = (this.getValor() * porcentagem);
 		setValor(this.getValor() - desconto);
 		return true;
 	}
-	
+
 	public int compare(Produto outro) {
 		return Double.compare(this.getValor(), outro.getValor());
 	}
@@ -65,6 +65,5 @@ public class Revista implements Produto, Promocional{
 
 		return Double.compare(getValor(), outro.getValor());
 	}
-	
-	
+
 }
